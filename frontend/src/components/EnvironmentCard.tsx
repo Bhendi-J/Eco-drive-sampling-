@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface EnvironmentCardProps {
   name: string;
@@ -16,7 +17,17 @@ const difficultyColors: Record<string, string> = {
   Hard: "bg-neon-green/20 text-neon-green border-neon-green/30",
 };
 
+// Map environment names to game modes
+const envToMode: Record<string, string> = {
+  Highway: "highway",
+  City: "city",
+  Jungle: "city", // Jungle uses city-like settings (harder)
+};
+
 const EnvironmentCard = ({ name, difficulty, description, image, glowClass, accentColor }: EnvironmentCardProps) => {
+  const navigate = useNavigate();
+  const gameMode = envToMode[name] || "highway";
+
   return (
     <motion.div
       whileHover={{ scale: 1.03, y: -4 }}
@@ -39,6 +50,7 @@ const EnvironmentCard = ({ name, difficulty, description, image, glowClass, acce
       <h3 className="font-display text-xl font-bold text-foreground mb-1">{name}</h3>
       <p className="text-sm text-muted-foreground mb-4">{description}</p>
       <button
+        onClick={() => navigate(`/play?mode=${gameMode}`)}
         className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-display font-semibold text-sm transition-all duration-300 border"
         style={{
           borderColor: accentColor,

@@ -101,7 +101,7 @@ const Dashboard = () => {
                 <PolarGrid stroke="hsl(220, 30%, 18%)" />
                 <PolarAngleAxis
                   dataKey="metric"
-                  tick={{ fill: "hsl(220, 15%, 55%)", fontSize: 11, fontFamily: "Exo 2" }}
+                  tick={{ fill: "hsl(220, 15%, 55%)", fontSize: 11, fontFamily: "Inter" }}
                 />
                 <PolarRadiusAxis tick={false} axisLine={false} />
                 <Radar
@@ -128,12 +128,12 @@ const Dashboard = () => {
                 <CartesianGrid stroke="hsl(220, 30%, 14%)" strokeDasharray="3 3" />
                 <XAxis
                   dataKey="day"
-                  tick={{ fill: "hsl(220, 15%, 55%)", fontSize: 12, fontFamily: "Exo 2" }}
+                  tick={{ fill: "hsl(220, 15%, 55%)", fontSize: 12, fontFamily: "Inter" }}
                   axisLine={{ stroke: "hsl(220, 30%, 18%)" }}
                 />
                 <YAxis
                   domain={[60, 100]}
-                  tick={{ fill: "hsl(220, 15%, 55%)", fontSize: 12, fontFamily: "Exo 2" }}
+                  tick={{ fill: "hsl(220, 15%, 55%)", fontSize: 12, fontFamily: "Inter" }}
                   axisLine={{ stroke: "hsl(220, 30%, 18%)" }}
                 />
                 <Tooltip
@@ -142,7 +142,7 @@ const Dashboard = () => {
                     border: "1px solid hsl(190, 100%, 50%, 0.3)",
                     borderRadius: "12px",
                     color: "hsl(200, 100%, 95%)",
-                    fontFamily: "Exo 2",
+                    fontFamily: "Inter",
                   }}
                 />
                 <Line
